@@ -1,5 +1,3 @@
-**Comprehensive AWS Network Security Topics**
-
 ## **2. AWS Network Security**
 
 ### **Table of Contents**
