@@ -55,7 +55,7 @@ An unexpected detail is that AWS Devops Guru, primarily for operational issues, 
 
 #### Introduction
 AWS security automation and DevSecOps are critical for maintaining secure and efficient application development and deployment processes. This guide covers a range of services and best practices, from securing CI/CD pipelines to automating vulnerability management, ensuring users can leverage AWS capabilities effectively.
-
+---
 #### 1. AWS CodeBuild Security Best Practices
 
 **Theory Explanation:**
@@ -85,7 +85,7 @@ AWS CodeBuild is a continuous integration service that compiles source code, run
   ```bash
   aws codebuild create-project --name myproject --source type=GITHUB,location=github.com/user/repo --artifacts type=S3,location=mybucket --environment type=LINUX_CONTAINER,image=aws/codebuild/standard:4.0
   ```
-
+---
 #### 2. AWS CodePipeline Security Measures
 
 **Theory Explanation:**
@@ -110,7 +110,7 @@ AWS CodePipeline automates the build, test, and deploy phases of your release pr
   aws codepipeline create-pipeline --cli-input-file pipeline.json
   ```
 - Ensure the pipeline uses the secure role and encrypted storage by updating the configuration.
-
+---
 #### 3. AWS Lambda Security Considerations
 
 **Theory Explanation:**
@@ -138,7 +138,7 @@ AWS Lambda is a serverless compute service that runs code in response to events.
   ```bash
   aws lambda update-function-configuration --function-name myfunction --environment Variables={SECRET_ARN=arn:secret:mysecret}
   ```
-
+---
 #### 4. AWS Secrets Manager for CI/CD Pipelines
 
 **Theory Explanation:**
@@ -162,7 +162,7 @@ AWS Secrets Manager helps securely store and manage credentials for applications
   ```bash
   secret_value=$(aws secretsmanager get-secret-value --secret-id mysecret --query SecretString --output text)
   ```
-
+---
 #### 5. AWS Security Automation withAWS Config Rules
 
 **Theory Explanation:**
@@ -186,7 +186,7 @@ AWS Config Rules allow you to monitor and enforce desired configurations for you
   ```bash
   aws configservice describe-compliance-by-config-rule --config-rule-name myrule
   ```
-
+---
 #### 6. AWS Systems Manager Patch Manager for Automated Updates
 
 **Theory Explanation:**
@@ -210,7 +210,7 @@ Patch Manager automates the process of patching managed instances with security-
   ```bash
   aws ssm create-patches-baseline-association --baseline-id "mybaselineid" --instance-ids i-123456
   ```
-
+---
 #### 7. AWS Security Best Practices forTerraform & CloudFormation
 
 **Theory Explanation:**
@@ -233,7 +233,7 @@ When using infrastructure as code (IaC) tools likeTerraform and CloudFormation, 
   ```bash
   aws cloudformation validate-template --template-body file://template.yaml
   ```
-
+---
 #### 8. AWS Identity and Access Management (IAM) Role Automation
 
 **Theory Explanation:**
@@ -256,7 +256,7 @@ IAM roles manage access toAWS resources securely, and automation involves creati
   ```bash
   aws iam attach-role-policy --role-name myrole --policy-arn arn:policy:mypolicy
   ```
-
+---
 #### 9. AWS EventBridge and Security Automation
 
 **Theory Explanation:**
@@ -280,7 +280,7 @@ EventBridge is a serverless event bus that triggers actions based on security ev
   ```bash
   aws events put-targets --rule myrule --targets Id=1,Arn=arn:function:mylambda
   ```
-
+---
 #### 10. AWS Auto Scaling Security Considerations
 
 **Theory Explanation:**
@@ -303,7 +303,7 @@ Auto Scaling manages EC2 instance scaling based on demand, with security conside
   ```bash
   aws autoscaling put-scaling-policy --auto-scaling-group-name mygroup --policy-name scale-out --adjustment-type ChangeInCapacity --scaling-adjustment 2
   ```
-
+---
 #### 11. AWS Service Catalog for Secure Application Deployment
 
 **Theory Explanation:**
@@ -327,7 +327,7 @@ Service Catalog provides a curated catalog of IT services approved for use, ensu
   ```bash
   aws servicecatalog associate-product-with-portfolio --product-id prod-123456 --portfolio-id port-123456
   ```
-
+---
 #### 12. AWS Devops Guru for Security-Related Anomalies
 
 **Theory Explanation:**
@@ -351,7 +351,7 @@ DevOps Guru uses machine learning to detect anomalies in application behavior, i
   ```bash
   aws devops-guru add-notification-channel --channel-id mychannel --channel-type SNS --channel-arn arn:sns:mytopic
   ```
-
+---
 #### 13. AWS Lambda Function Hardening
 
 **Theory Explanation:**
@@ -374,7 +374,7 @@ Hardening Lambda functions involves securing the function's code, environment, a
   ```bash
   aws lambda update-function-configuration --function-name myfunction --role arn:role:myrole
   ```
-
+---
 #### 14. AWS Security inKubernetes (EKS) and Dockerfile
 
 **Theory Explanation:**
@@ -405,7 +405,7 @@ Securing applications in Amazon EKS involves securing the cluster with IAM roles
   docker tag myimage <account_id>.dkr.ecr.<region>.amazonaws.com/myimage
   docker push <account_id>.dkr.ecr.<region>.amazonaws.com/myimage
   ```
-
+---
 #### 15. AWS Security Scanning withAmazon Inspector
 
 **Theory Explanation:**
@@ -433,7 +433,7 @@ Amazon Inspector is a vulnerability management service that scans EC2 instances,
   ```bash
   aws inspector start-assessment-run --assessment-template-arn arn:assessmenttemplate:mytemplate
   ```
-
+---
 #### Tables for Reference
 | **Service**                     | **Primary Use Case**                     | **Key Feature**                          |
 |----------------------------------|------------------------------------------|------------------------------------------|
