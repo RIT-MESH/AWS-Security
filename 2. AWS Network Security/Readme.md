@@ -19,16 +19,6 @@
 
 ---
 
-#### **2.11 VPC Peering and Security Considerations**
-**Theory:** VPC Peering allows secure communication between VPCs while maintaining isolation. It does not support transitive peering and requires appropriate route table configurations.
-
-**UI Steps:**
-1. Navigate to AWS VPC → Peering Connections.
-2. Click "Create Peering Connection" and define the requester and accepter VPCs.
-3. Accept t
-
-
-
 
 #### **2.1 Virtual Private Cloud (VPC) Security**
 **Theory:** Amazon VPC allows users to create isolated cloud environments with security features like subnetting, security groups, and network ACLs.
