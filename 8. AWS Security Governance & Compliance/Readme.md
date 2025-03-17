@@ -22,7 +22,7 @@ An unexpected detail is that AWS Devops Guru, primarily for operational issues, 
 
 
 AWS security governance and compliance are critical for organizations to meet regulatory requirements and maintain a secure cloud environment. This guide covers a range of services and best practices, from leveraging the Well-Architected Framework to automating compliance checks, ensuring users can align with standards like ISO, HIPAA, and PCI DSS effectively.
-
+---
 #### 1. AWS Well-Architected Security Framework
 
 **Theory Explanation:**
@@ -42,7 +42,7 @@ The AWS Well-Architected Framework is a set of best practices for designing and 
     ```bash
     aws iam update-role-policy --role-name myrole --policy-document file://policy.json
     ```
-
+---
 #### 2. AWS Compliance Programs (ISO, HIPAA, SOC, FedRAMP, PCI DSS)
 
 **Theory Explanation:**
@@ -65,7 +65,7 @@ AWS supports numerous compliance programs, including ISO 27001, HIPAA, SOC 1/2/3
   ```bash
   aws s3api put-bucket-encryption --bucket mybucket --server-side-encryption-configuration '{"Rules":[{"ApplyServerSideEncryptionByDefault":{"SSEAlgorithm":"AES256"}}]}'
   ```
-
+---
 #### 3. AWS Artifact for Compliance Reports
 
 **Theory Explanation:**
@@ -84,7 +84,7 @@ AWS Artifact is a self-service portal providing on-demand access to AWS security
   ```bash
   aws iam attach-user-policy --user-name myuser --policy-arn arn:aws:iam::aws:policy/AWSArtifactFullAccess
   ```
-
+---
 #### 4. AWS Shield for Regulatory Compliance
 
 **Theory Explanation:**
@@ -107,7 +107,7 @@ AWS Shield is a managed DDoS protection service that helps protect web applicati
   ```bash
   aws shield list-protections
   ```
-
+---
 #### 5. AWS Service Control Policies (SCPs) for Compliance Enforcement
 
 **Theory Explanation:**
@@ -130,7 +130,7 @@ SCPs are part of AWS Organizations, allowing centralized control over permission
   ```bash
   aws organizations attach-policy --policy-id p-1234567890 --target-id ou-1234567890
   ```
-
+---
 #### 6. AWS Organizations Security Best Practices
 
 **Theory Explanation:**
@@ -153,7 +153,7 @@ AWS Organizations enables centralized management of multiple accounts, with best
   ```bash
   aws organizations create-organizational-unit --parent-id r-1234567890 --name myou
   ```
-
+---
 #### 7. AWS License Manager Compliance Settings
 
 **Theory Explanation:**
@@ -176,7 +176,7 @@ AWS License Manager helps manage software licenses to ensure compliance with ven
   ```bash
   aws license-manager associate-license --license-configuration-arn arn:license:mylicense --resource-arn arn:aws:ec2:region:account-id:instance/i-1234567890
   ```
-
+---
 #### 8. AWS Audit Manager Compliance Automation
 
 **Theory Explanation:**
@@ -199,7 +199,7 @@ AWS Audit Manager automates evidence collection for compliance audits, using pre
   ```bash
   aws auditmanager list-assessments
   ```
-
+---
 #### 9. AWS Security and Data Privacy Laws
 
 **Theory Explanation:**
@@ -222,7 +222,7 @@ AWS helps comply with data privacy laws like GDPR and CCPA through services like
   ```bash
   aws iam update-role-policy --role-name myrole --policy-document file://policy.json
   ```
-
+---
 #### 10. AWS Control Tower for Secure Multi-Account Management
 
 **Theory Explanation:**
@@ -241,7 +241,7 @@ AWS Control Tower simplifies setting up and governing a secure multi-account env
   ```bash
   aws organizations create-account --email myemail@example.com --account-name myaccount
   ```
-
+---
 #### 11. AWS Data Classification and Protection Guidelines
 
 **Theory Explanation:**
@@ -264,7 +264,7 @@ AWS provides guidelines for classifying data based on sensitivity and applying p
   ```bash
   aws kms create-key --description "My key"
   ```
-
+---
 #### 12. AWS Shared Responsibility Model in Compliance
 
 **Theory Explanation:**
@@ -278,7 +278,7 @@ The Shared Responsibility Model defines AWS's role in securing the cloud infrast
   ```bash
   aws s3api put-bucket-policy --bucket mybucket --policy file://policy.json
   ```
-
+---
 #### 13. AWS Compliance with GDPR and CCPA
 
 **Theory Explanation:**
@@ -297,7 +297,7 @@ AWS helps comply with GDPR and CCPA through the Data Processing Addendum (DPA), 
   ```bash
   aws s3api put-bucket-encryption --bucket mybucket --server-side-encryption-configuration '{"Rules":[{"ApplyServerSideEncryptionByDefault":{"SSEAlgorithm":"AES256"}}]}'
   ```
-
+---
 #### 14. AWS Third-Party Security Assessments and Penetration Testing
 
 **Theory Explanation:**
@@ -320,7 +320,7 @@ AWS supports third-party security assessments and penetration testing to verify 
   ```bash
   aws ec2 describe-security-groups
   ```
-
+---
 #### 15. AWS Industry-Specific Security Standards (Financial, Healthcare, etc.)
 
 **Theory Explanation:**
@@ -343,7 +343,7 @@ AWS provides tailored configurations for industry-specific standards, such as fi
   ```bash
   aws securityhub get-findings --filters file://filters.json
   ```
-
+---
 #### Tables for Reference
 | **Service**                     | **Primary Use Case**                     | **Key Feature**                          |
 |----------------------------------|------------------------------------------|------------------------------------------|
