@@ -55,6 +55,7 @@ An unexpected detail is that AWS Devops Guru, primarily for operational issues, 
 
 #### Introduction
 AWS security automation and DevSecOps are critical for maintaining secure and efficient application development and deployment processes. This guide covers a range of services and best practices, from securing CI/CD pipelines to automating vulnerability management, ensuring users can leverage AWS capabilities effectively.
+
 ---
 #### 1. AWS CodeBuild Security Best Practices
 
