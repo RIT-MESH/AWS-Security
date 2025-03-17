@@ -22,6 +22,7 @@ An unexpected detail is that AWS Devops Guru, primarily for operational issues, 
 
 
 AWS security governance and compliance are critical for organizations to meet regulatory requirements and maintain a secure cloud environment. This guide covers a range of services and best practices, from leveraging the Well-Architected Framework to automating compliance checks, ensuring users can align with standards like ISO, HIPAA, and PCI DSS effectively.
+
 ---
 #### 1. AWS Well-Architected Security Framework
 
