@@ -1,6 +1,36 @@
 **Comprehensive AWS Network Security Topics**
 
-### **2. AWS Network Security**
+## **2. AWS Network Security**
+
+### **Table of Contents**
+1. **2.1 Virtual Private Cloud (VPC) Security**
+2. **2.2 Security Groups and Network ACLs**
+3. **2.3 AWS PrivateLink and Interface VPC Endpoints**
+4. **2.4 VPC Flow Logs**
+5. **2.5 AWS Shield (Standard & Advanced)**
+6. **2.6 AWS WAF (Web Application Firewall)**
+7. **2.7 AWS Network Firewall**
+8. **2.8 AWS Direct Connect Security**
+9. **2.9 AWS VPN Security Best Practices**
+10. **2.10 AWS Global Accelerator Security**
+11. **2.11 VPC Peering and Security Considerations**
+12. **2.12 DNS Security with Route 53 Resolver**
+13. **2.13 AWS Traffic Mirroring for Security Analysis**
+14. **2.14 AWS Security Hub Integration with VPC**
+15. **2.15 Network Access Analyzer**
+
+---
+
+#### **2.11 VPC Peering and Security Considerations**
+**Theory:** VPC Peering allows secure communication between VPCs while maintaining isolation. It does not support transitive peering and requires appropriate route table configurations.
+
+**UI Steps:**
+1. Navigate to AWS VPC → Peering Connections.
+2. Click "Create Peering Connection" and define the requester and accepter VPCs.
+3. Accept t
+
+
+
 
 #### **2.1 Virtual Private Cloud (VPC) Security**
 **Theory:** Amazon VPC allows users to create isolated cloud environments with security features like subnetting, security groups, and network ACLs.
