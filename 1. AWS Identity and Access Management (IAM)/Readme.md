@@ -15,7 +15,9 @@ For more details, check out the [AWS IAM Documentation](https://docs.aws.amazon.
 ---
 
 #### Introduction
+
 AWS Identity and Access Management (IAM) is a critical service for controlling access to AWS resources, ensuring that only authorized users and services can perform actions. This guide covers a range of features and best practices, from managing users and roles to leveraging advanced tools like IAM Access Analyzer and IAM Identity Center, ensuring users can secure their cloud environment effectively.
+
 ---
 #### 1.1 "IAM Users, Groups, Roles, and Policies"
 
