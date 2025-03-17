@@ -11,7 +11,7 @@ AWS offers several disaster recovery strategies, such as Backup and Restore, Pil
 ---
 
 
-#### Introduction
+## Introduction
 AWS incident response and disaster recovery are critical for maintaining business continuity, especially in the face of security incidents and disasters. This guide covers a range of services and strategies, from automated incident management to disaster recovery planning, ensuring users can leverage AWS capabilities effectively.
 
 
