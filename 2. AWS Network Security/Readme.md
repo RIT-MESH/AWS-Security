@@ -43,6 +43,7 @@ An unexpected detail is that AWS Devops Guru, primarily for operational issues, 
 
 #### Introduction
 AWS network security is critical for protecting cloud resources from unauthorized access, data breaches, and denial-of-service attacks. This guide covers a range of services and best practices, from configuring Virtual Private Clouds (VPCs) to leveraging advanced tools like AWS WAF and Network Firewall, ensuring users can secure their network infrastructure effectively.
+
 ---
 #### 1. Virtual Private Cloud (VPC) Security
 
