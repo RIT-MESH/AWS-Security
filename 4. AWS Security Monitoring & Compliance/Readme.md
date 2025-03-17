@@ -1,6 +1,3 @@
-Here’s your structured content with numbering starting from "A" for the main heading, followed by a table of contents, and then each topic organized with theory explanation, UI steps, and CLI steps where applicable. I’ve kept it clean and logical for easy navigation.
-
----
 
 ### A. AWS Security Monitoring & Compliance
 
@@ -190,4 +187,3 @@ Here’s your structured content with numbering starting from "A" for the main h
 
 ---
 
-Let me know if you’d like me to expand on any section or tweak the format!
