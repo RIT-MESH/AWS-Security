@@ -32,8 +32,8 @@ AWS incident response and disaster recovery are critical for maintaining busines
 14. AWS SNS & Lambda for Security Event Notifications  
 15. AWS Config Rules for Automated Compliance Enforcement
 
-
-#### Incident Response Best Practices
+---
+## Incident Response Best Practices
 **Theory Explanation:**
 Incident response is the process of identifying, containing, eradicating, and recovering from security incidents, minimizing impact on operations. In **AWS**, this involves using services like **CloudWatch** for monitoring, **CloudTrail** for API call history, **GuardDuty** for threat detection, **Systems Manager** for incident management, and **Config** for configuration management. The process includes preparation, detection, analysis, containment, eradication, recovery, and post-incident activities, ensuring a structured approach to handling disruptions.
 
@@ -46,8 +46,8 @@ Incident response is the process of identifying, containing, eradicating, and re
 - Create a **CloudWatch** Alarm: `aws cloudwatch put-metric-alarm --alarm-name "CPUAlarm" --comparison-operator GreaterThanOrEqual --evaluation-periods 1 --metric-name CPUUtilization --namespace "AWS/EC2" --period 300 --statistic Average --threshold 70 --actions-enabled --alarm-actions "arn:aws:sns:region:account-id:topic-name"`
 - Enable **GuardDuty**: `aws guardduty create-detector --enable`
 - Create a **Config** Rule: `aws configservice put-config-rule --config-rule file://path/to/config-rule.json`
-
-#### Disaster Recovery Strategies (Pilot Light, Warm Standby, Multi-Site)
+---
+## Disaster Recovery Strategies (Pilot Light, Warm Standby, Multi-Site)
 **Theory Explanation:**
 Disaster recovery strategies in **AWS** are designed to minimize downtime and data loss, with options like Backup and Restore (simplest, higher RTO/RPO), Pilot Light (minimal active resources, quicker recovery), Warm Standby (scaled-down full environment, ready to scale up), and Multi-Site Active/Active (multiple active sites, lowest RTO/RPO). Each strategy balances cost, complexity, and recovery objectives, supported by services like **AWS** Backup and Elastic Disaster Recovery (**AWS** DRS).
 
@@ -60,8 +60,8 @@ Disaster recovery strategies in **AWS** are designed to minimize downtime and da
 **CLI Steps:**
 - Create an **AWS** Backup Plan: `aws backup create-backup-plan --backup-plan file://path/to/backup-plan.json`
 - Manage Route 53 for Failover: `aws route53 create-traffic-policy --name "MyPolicy" --document file://path/to/policy.json`
-
-#### AWS Resilience Hub for Disaster Preparedness
+---
+## AWS Resilience Hub for Disaster Preparedness
 **Theory Explanation:**
 **AWS** Resilience Hub is a service for managing and improving application resilience, allowing users to define resilience goals (RTO, RPO), assess posture, and implement recommendations based on the **AWS** Well-Architected Framework. It integrates with **AWS** Fault Injection Service for testing, enhancing disaster preparedness by identifying weaknesses before disruptions occur.
 
@@ -74,8 +74,8 @@ Disaster recovery strategies in **AWS** are designed to minimize downtime and da
 - Create an Application: `aws resiliencehub create-app --name "MyApp"`
 - Create a Resilient Policy: `aws resiliencehub create-resilience-policy --name "MyPolicy" --rto-in-seconds 300 --rpo-in-seconds 60`
 - Run an Assessment: `aws resiliencehub start-app-evaluation --app-arn "arn:..."`
-
-#### AWS Backup for Automated Data Protection
+---
+## AWS Backup for Automated Data Protection
 **Theory Explanation:**
 **AWS** Backup automates data protection across **AWS** services, crucial for disaster recovery by ensuring data can be restored from backups in case of accidental deletion or corruption. It supports centralized management, cross-region copies, and retention policies, enhancing recovery capabilities.
 
@@ -88,8 +88,8 @@ Disaster recovery strategies in **AWS** are designed to minimize downtime and da
 - Create a Backup Plan: `aws backup create-backup-plan --backup-plan file://path/to/backup-plan.json`
 - Create a Backup Selection: `aws backup create-backup-selection --backup-plan-id "plan-id" --name "MySelection" --resources "arn:..."`
 - Restore a Backup: `aws backup start-restore-job --backup-vault-name "vault-name" --recovery-point-arn "arn:..." --iam-role-arn "arn:..."`
-
-#### AWS Elastic Disaster Recovery (AWS DRS)
+---
+## AWS Elastic Disaster Recovery (AWS DRS)
 **Theory Explanation:**
 **AWS** Elastic Disaster Recovery (**AWS** DRS) replicates on-premises or cloud-based applications to **AWS** using block-level replication, minimizing data loss and enabling fast recovery. It uses a pilot light strategy, maintaining staged resources for quick deployment during disasters, reducing downtime and costs compared to traditional solutions.
 
@@ -102,8 +102,8 @@ Disaster recovery strategies in **AWS** are designed to minimize downtime and da
 - Create a Replication Configuration: `aws drs create-replication-configuration --replication-configuration file://path/to/config.json`
 - Start Replication: `aws drs start-replication --replication-id "id"`
 - Perform a Failover: `aws drs start-failover --replication-id "id"`
-
-#### AWS Route 53 Failover Strategies
+---
+## AWS Route 53 Failover Strategies
 **Theory Explanation:**
 **AWS** Route 53's Failover routing policy routes traffic to healthy endpoints, crucial for disaster recovery by automatically switching to secondary resources if primary ones fail. It uses health checks to monitor resource status, ensuring high availability and minimal disruption during failures.
 
@@ -116,8 +116,8 @@ Disaster recovery strategies in **AWS** are designed to minimize downtime and da
 - Create a Hosted Zone: `aws route53 create-hosted-zone --name "example.com" --caller-reference "1234567890"`
 - Create a Failover Record Set: `aws route53 change-resource-record-sets --hosted-zone-id "zone-id" --change-batch file://path/to/failover-record.json`
 - Set Up Health Checks: `aws route53 create-health-check --health-check file://path/to/check.json`
-
-#### AWS Auto Scaling for High Availability
+---
+## AWS Auto Scaling for High Availability
 **Theory Explanation:**
 **AWS** Auto Scaling adjusts EC2 instance counts based on demand, ensuring high availability by maintaining performance during traffic spikes and enabling quick recovery in disaster scenarios. It can scale up in secondary regions for failover, enhancing resilience and reducing manual intervention.
 
@@ -130,8 +130,8 @@ Disaster recovery strategies in **AWS** are designed to minimize downtime and da
 - Create an Auto Scaling Group: `aws autoscaling create-auto-scaling-group --auto-scaling-group-name "MyGroup" --launch-template id="lt-1234567890" --min-size 2 --max-size 10 --desired-capacity 2`
 - Set a Scaling Policy: `aws autoscaling put-scaling-policy --auto-scaling-group-name "MyGroup" --policy-name "ScaleOutPolicy" --adjustment-type ChangeInCapacity --scaling-adjustment 2`
 - Attach a Notification: `aws autoscaling put-notification-configuration --auto-scaling-group-name "MyGroup" --notifications "autoscaling:EC2_INSTANCE_LAUNCH" --topic-arn "arn:..."`
-
-#### AWS Systems Manager Incident Manager
+---
+## AWS Systems Manager Incident Manager
 **Theory Explanation:**
 **AWS** Systems Manager Incident Manager automates incident response, engaging responders via SMS, phone, and chat channels, executing runbooks, and providing post-incident analysis. It reduces resolution time by centralizing incident management, crucial for maintaining application availability during disruptions.
 
@@ -144,8 +144,8 @@ Disaster recovery strategies in **AWS** are designed to minimize downtime and da
 - Create a Response Plan: `aws ssm-incidents create-response-plan --name "MyPlan" --display-name "My Response Plan"`
 - Create an Incident: `aws ssm-incidents create-incident --title "Incident Title" --impact "High"`
 - Assign Responders: `aws ssm-incidents assign-person-to-incident --incident-record-id "id" --person-id "user-id"`
-
-#### AWS Organizations and Centralized Logging for Security Response
+---
+## AWS Organizations and Centralized Logging for Security Response
 **Theory Explanation:**
 **AWS** Organizations manages multiple accounts centrally, while centralized logging collects logs from services like CloudWatch, CloudTrail, and OpenSearch into a single location. This enhances security response by providing a unified view for incident analysis, crucial for detecting and mitigating threats across accounts.
 
@@ -158,8 +158,8 @@ Disaster recovery strategies in **AWS** are designed to minimize downtime and da
 - Create an Organization: `aws organizations create-organization`
 - Enable CloudTrail for an Account: `aws cloudtrail create-trail --name "MyTrail" --s3-bucket-name "bucket-name"`
 - Set Up CloudWatch Logs Subscription: `aws logs put-subscription-filter --log-group-name "log-group" --filter-name "MyFilter" --destination-arn "arn:..."`
-
-#### AWS CloudEndure Disaster Recovery
+---
+## AWS CloudEndure Disaster Recovery
 **Theory Explanation:**
 **AWS** CloudEndure, now largely replaced by **AWS** Elastic Disaster Recovery (**AWS** DRS), was a service for replicating on-premises or cloud-based applications to **AWS** for disaster recovery, using block-level replication for minimal RPO. As of March 31, 2024, it's discontinued in most regions except **AWS** GovCloud and China, with **AWS** DRS recommended for current use.
 
@@ -169,8 +169,8 @@ Disaster recovery strategies in **AWS** are designed to minimize downtime and da
 
 **CLI Steps:**
 - Given deprecation, use **AWS** DRS CLI commands, e.g., `aws drs create-replication-configuration --replication-configuration file://path/to/config.json`
-
-#### AWS IAM Policy Updates for Emergency Access
+---
+## AWS IAM Policy Updates for Emergency Access
 **Theory Explanation:**
 Managing IAM policies for emergency access ensures quick response during incidents, using predefined roles and users with specific permissions. This involves creating emergency access accounts, roles, and policies, ensuring security while enabling rapid action during disruptions.
 
@@ -184,8 +184,8 @@ Managing IAM policies for emergency access ensures quick response during inciden
 - Attach Policies to the Role: `aws iam attach-role-policy --role-name "EmergencyRole" --policy-arn "arn:..."`
 - Create an IAM User: `aws iam create-user --user-name "EmergencyUser"`
 - Assign the Role to the User: `aws iam add-user-to-group --user-name "EmergencyUser" --group-name "EmergencyGroup"`
-
-#### AWS Security Contact Information Management
+---
+## AWS Security Contact Information Management
 **Theory Explanation:**
 Managing security contact information ensures **AWS** can notify designated contacts during security incidents, crucial for timely response. This involves updating primary and alternate contacts in account settings, ensuring notifications reach the right people for effective incident handling.
 
@@ -197,8 +197,8 @@ Managing security contact information ensures **AWS** can notify designated cont
 - Update Security Contact: `aws account update-contact-information --security-contact-name "Name" --security-contact-email "email@example.com" --security-contact-phone-number "+1234567890"`
 - Create an SNS Topic: `aws sns create-topic --name "SecurityNotifications"`
 - Subscribe to the Topic: `aws sns subscribe --topic-arn "arn:..." --protocol email --endpoint "email@example.com"`
-
-#### AWS Resilient with Amazon Aurora Global Database
+---
+## AWS Resilient with Amazon Aurora Global Database
 **Theory Explanation:**
 Amazon Aurora Global Database spans multiple **AWS** regions, replicating data with low latency for enhanced resilience and disaster recovery. It allows fast failovers, maintaining six copies of data across Availability Zones, ensuring high durability and availability during regional outages.
 
@@ -211,8 +211,8 @@ Amazon Aurora Global Database spans multiple **AWS** regions, replicating data w
 - Create a Global Database Cluster: `aws rds create-global-cluster --global-cluster-identifier "MyGlobalCluster" --engine "aurora-mysql" --source-db-cluster-identifier "primary-cluster-id"`
 - Add a Secondary Cluster: `aws rds add-source-to-global-cluster --global-cluster-identifier "MyGlobalCluster" --source-region "secondary-region" --source-cluster-id "secondary-cluster-id"`
 - Perform a Failover: `aws rds fail-over-global-cluster --global-cluster-identifier "MyGlobalCluster" --target-db-cluster-id "secondary-cluster-id"`
-
-#### AWS SNS & Lambda for Security Event Notifications
+---
+## AWS SNS & Lambda for Security Event Notifications
 **Theory Explanation:**
 Using Amazon SNS and Lambda for security event notifications involves setting up SNS topics to send alerts to Lambda functions, which process and act on these notifications. This automation enhances incident response by triggering actions like alerts or further automation, ensuring timely handling of security events.
 
@@ -225,8 +225,8 @@ Using Amazon SNS and Lambda for security event notifications involves setting up
 - Create an SNS Topic: `aws sns create-topic --name "SecurityEvents"`
 - Create a Lambda Function: `aws lambda create-function --function-name "SecurityEventHandler" --runtime "python3.9" --role "arn:..." --handler "index.lambda_handler" --code file://path/to/lambda-code.zip`
 - Subscribe Lambda to SNS Topic: `aws sns subscribe --topic-arn "arn:..." --protocol lambda --endpoint "arn:..."`
-
-#### AWS Config Rules for Automated Compliance Enforcement
+---
+## AWS Config Rules for Automated Compliance Enforcement
 **Theory Explanation:**
 **AWS** Config Rules define compliance checks for resource configurations, ensuring adherence to standards and best practices. They run continuously, detecting non-compliant resources in real-time, automating enforcement, and providing reports for regulatory compliance, enhancing security posture.
 
@@ -239,7 +239,7 @@ Using Amazon SNS and Lambda for security event notifications involves setting up
 - Create a Config Rule: `aws configservice put-config-rule --config-rule file://path/to/config-rule.json`
 - Set Up Compliance Notifications: `aws configservice put-notification-configuration --topic-arn "arn:..." --notification-types COMPLIANCE`
 - List Compliance Status: `aws configservice describe-compliance-by-config-rule`
-
+---
 #### Tables for Reference
 | **Service**                     | **Primary Use Case**                     | **Key Feature**                          |
 |----------------------------------|------------------------------------------|------------------------------------------|
