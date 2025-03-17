@@ -1,4 +1,4 @@
-# Comprehensive AWS Data Protection & Encryption Topics
+# AWS Data Protection & Encryption 
 
 ## Table of Contents
 1. AWS Key Management Service (KMS)
